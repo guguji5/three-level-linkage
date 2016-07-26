@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html ng-app="tree">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>three level linkage</title>
+    <meta name="keywords" content="">
+
+     <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.5 -->
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="close/iconfont.css">
+    <style>
+        label:hover{color:#abcdef;}
+        label{padding:5px;}
+        h4 span.btn{margin-right: 10px;border-radius: 15px;}
+        .noallowed{cursor:not-allowed}
+        .default{cursor:default}
+        .bgprimary{color:red;}
+    </style>
+</head>
+<body ng-controller="table">
+  <h4>
+    <span class="btn btn-primary" ng-click="removeItem($index,i[0])" ng-repeat="i in selectArray">{{i[0]}}<i class="iconfont">&#xe637;</i> </span>
+  </h4>
+        <uib-tabset active="active">
+          <uib-tab ng-show="tabs[0].show" select='select0()'>
+            <uib-tab-heading>
+              {{tabs[0].title}}
+            </uib-tab-heading>
+            <ul>
+              <li style='width:20%;float:left;list-style:none' ng-repeat="(key, value) in tabs[0].content" ng-click="show1(key)"><label class='text-primary'>{{key}}</label><span class="label label-primary" >{{value}}</span></li>
+            </ul>
+          </uib-tab>
+
+          <uib-tab heading="{{tabs[1].title}}" ng-show="tabs[1].show" ng-click='select1()'>
+            <ul>
+            <li style='width:100%;float:left;list-style:none' ng-click="replaceAll1()"><label class='text-primary'>{{tabs[1].title}}</label><span class="label label-primary">{{tabs[1].num}}</span></li>
+              <li style='width:20%;float:left;list-style:none' ng-class="{true: 'noallowed', false: 'default'}[forbidden1]" ng-repeat="(key, value) in tabs[1].content" ng-click="show2(key)"><label class='text-primary' ng-class="{true: 'noallowed', false: 'default'}[forbidden1]">{{key}}</label><span class="label label-primary">{{value}}</span></li>
+            </ul>
+          </uib-tab>
+          <uib-tab heading="{{tabs[2].title}}" ng-show="tabs[2].show">
+            <ul>
+              <li style='width:100%;float:left;list-style:none' ng-click="replaceAll2()"><label class='text-primary'>{{tabs[2].title}}</label><span class="label label-primary" >{{tabs[2].num}}</span></li>
+              <li style='width:20%;float:left;list-style:none' ng-repeat="(key, value) in tabs[2].content" ng-click="pushInArray(key)" ng-class="{true: 'noallowed', false: 'default'}[forbidden2]"><label class='{{value}}' ng-class="{true: 'noallowed', false: 'default'}[forbidden2]">{{key}}</label></li>
+            </ul>
+          </uib-tab><!--class='text-primary' class='bg-primary'-->
+        </uib-tabset>
+    <div style='clear:both'></div>
+    <br />
+    <script src="js/angular.js"></script>
+    <script src="js/ui-bootstrap-tpls-1.3.3.js"></script>
+    <script src="js/example.js"></script>
+
+</body>
+</html>
