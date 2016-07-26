@@ -40,3 +40,7 @@ once your request is successful,and your $scope.tabs is contain exact data,this 
 the normal looking just like that
 
 ![success look](/img/success.png "cool ？")
+
+if you have any problem appling it for your project,contact me,it's my pleasure to give you my hands.
+
+有任何问题，请提出，愿意帮您解决。
