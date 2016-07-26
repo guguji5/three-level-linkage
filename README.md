@@ -41,6 +41,9 @@ the normal looking just like that
 
 ![success look](/img/success.png "cool ？")
 
+**Attentions:**
+beacuse of the angular'asynchronous you can't open it by dblclick ，only when your brower is Mozilla
+
 if you have any problem appling it for your project,contact me,it's my pleasure to give you my hands.
 
 有任何问题，请提出，愿意帮您解决。
