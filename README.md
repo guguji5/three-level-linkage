@@ -41,6 +41,8 @@ the normal looking just like that
 
 ![success look](/img/success.png "cool £¿")
 
+![allSelected](/img/allSelect.jpg "cool £¿")
+
 **Attentions:**
 beacuse of the angular'asynchronous you can't open it by dblclick £¬only when your brower is Mozilla
 
