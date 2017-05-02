@@ -1,31 +1,31 @@
-# three-level-linkage(Èı¼¶Áª¶¯)
+ï»¿# three-level-linkage(ä¸‰çº§è”åŠ¨)
 
 it's a component to build the three-level-linkage webpage,it may be used to orangise the relationship of the province city and country just as the example.the advantages of it comparing with its similarities are the nice surface, friendly interaction ,multiSelect and parent-node-select. 
 
-ÕâÊÇÒ»¸öÈı¼¶Áª¶¯µÄĞ¡×é¼ş£¬¿ÉÒÔÓÃËüÀ´×éÖ¯ÏñÊ¡ÊĞÏØÕâÖÖ¹ØÏµµÄHTMLÒ³Ãæ½á¹¹¡£ËüºÍÆäËûµÄ²å¼ş²»Í¬µÄµØ·½¾ÍÊÇ£¬ÑùÊ½ºÃ¿´£¬½»»¥ÓÑºÃ£¬»¹¿ÉÒÔ¶àÑ¡ÒÔ¼°Ñ¡È¡¸¸¼¶½Úµã¡£
+è¿™æ˜¯ä¸€ä¸ªä¸‰çº§è”åŠ¨çš„å°ç»„ä»¶ï¼Œå¯ä»¥ç”¨å®ƒæ¥ç»„ç»‡åƒçœå¸‚å¿è¿™ç§å…³ç³»çš„HTMLé¡µé¢ç»“æ„ã€‚å®ƒå’Œå…¶ä»–çš„æ’ä»¶ä¸åŒçš„åœ°æ–¹å°±æ˜¯ï¼Œæ ·å¼å¥½çœ‹ï¼Œäº¤äº’å‹å¥½ï¼Œè¿˜å¯ä»¥å¤šé€‰ä»¥åŠé€‰å–çˆ¶çº§èŠ‚ç‚¹ã€‚
 
 it can be used to show your linked static data by handling the cities.json in the master,you can alse let your back-end partners to write a api,which is more convenient(if you used api,just forget the cities.json)
 
-Ëü¿ÉÒÔÍ¨¹ıcities.jsonµÄ²Ù×÷ÓÃÀ´¾²Ì¬µÄÕ¹Ê¾Èı¼¶µÄÁª¶¯Êı¾İ£¬Ò²¿ÉÒÔÈÃÄãµÄºó¶ËĞ¡»ï°éÀ´°ïÄãĞ´¸ö½Ó¿Ú£¬Ö±½ÓÇëÇó½Ó¿Ú¸ü·½±ã¡££¨Èç¹ûÄãÓĞºóÌ¨½Ó¿Ú¿ÉÒÔÍêÈ«Å×Æúcities.json£©
+å®ƒå¯ä»¥é€šè¿‡cities.jsonçš„æ“ä½œç”¨æ¥é™æ€çš„å±•ç¤ºä¸‰çº§çš„è”åŠ¨æ•°æ®ï¼Œä¹Ÿå¯ä»¥è®©ä½ çš„åç«¯å°ä¼™ä¼´æ¥å¸®ä½ å†™ä¸ªæ¥å£ï¼Œç›´æ¥è¯·æ±‚æ¥å£æ›´æ–¹ä¾¿ã€‚ï¼ˆå¦‚æœä½ æœ‰åå°æ¥å£å¯ä»¥å®Œå…¨æŠ›å¼ƒcities.jsonï¼‰
 
-if you want exhibit the data bg cities.json,you can ask for it just like below(Èç¹ûÄãÊÇ¾²Ì¬µÄÇëÇócities.json£¬Äã¿ÉÒÔ½´×Ï)
+if you want exhibit the data bg cities.json,you can ask for it just like below(å¦‚æœä½ æ˜¯é™æ€çš„è¯·æ±‚cities.jsonï¼Œä½ å¯ä»¥é…±ç´«)
 ```sh
 //example.js
-dataTaken.getData('cities.json')//·½·¨ÔÚÏÂ±ßµÄserviceÀï±ß¶¨Òå
+dataTaken.getData('cities.json')//æ–¹æ³•åœ¨ä¸‹è¾¹çš„serviceé‡Œè¾¹å®šä¹‰
 .success(function (response) {
     angular.forEach(response[$scope.tabs[0].pid[index]], function (value) 
-    //$scope.tabs[0].pid[index]ÊÇÈ¡jsonÀï±ß¶ÔÓ¦µÄÖµ½øĞĞ²Ù×÷
+    //$scope.tabs[0].pid[index]æ˜¯å–jsoné‡Œè¾¹å¯¹åº”çš„å€¼è¿›è¡Œæ“ä½œ
         $scope.tabs[1].content[value.text] = '';
         $scope.tabs[1].pid[value.text] = value.id;
     })
     $scope.checkSelected1();
 })
 ```
-fortunately if you have api written bg your colleague,you can ask for it like that(Èç¹ûÓĞºóÌ¨Ğ¡»ï°é°ïÄãĞ´½Ó¿Ú£¬Äã¿ÉÒÔ½´×Ï)
+fortunately if you have api written bg your colleague,you can ask for it like that(å¦‚æœæœ‰åå°å°ä¼™ä¼´å¸®ä½ å†™æ¥å£ï¼Œä½ å¯ä»¥é…±ç´«)
 ```sh
 //example.js
 dataTaken.getData($scope.tabs[0].pid[index])
-//ÕâÀïindexÊÇ²ÎÊı¿©£¬$scope.tabs[0].pid[index]¾ÍÊÇÈ¡ËüµÄid£¬×÷Îª²ÎÊı½øĞĞapi£¬ÈË¼Ò½Ó¿Ú¾ÍÊÇÕâÃ´Ğ´µÄ
+//è¿™é‡Œindexæ˜¯å‚æ•°å’¯ï¼Œ$scope.tabs[0].pid[index]å°±æ˜¯å–å®ƒçš„idï¼Œä½œä¸ºå‚æ•°è¿›è¡Œapiï¼Œäººå®¶æ¥å£å°±æ˜¯è¿™ä¹ˆå†™çš„
 .success(function (response) {
     angular.forEach(response, function (value) {
         $scope.tabs[1].content[value.text] = '';
@@ -35,17 +35,17 @@ dataTaken.getData($scope.tabs[0].pid[index])
 })
 ```
 once your request is successful,and your $scope.tabs is contain exact data,this  component starts up
-Èç¹ûÄúÇëÇó³É¹¦£¬²¢ÇÒjsÖĞµÄ $scope.tabsÌîÈëÕıÈ·µÄÊı¾İ£¬Õâ¸ö²å¼ş¾Í»áÕı³£µÄ¹¤×÷¡£
+å¦‚æœæ‚¨è¯·æ±‚æˆåŠŸï¼Œå¹¶ä¸”jsä¸­çš„ $scope.tabså¡«å…¥æ­£ç¡®çš„æ•°æ®ï¼Œè¿™ä¸ªæ’ä»¶å°±ä¼šæ­£å¸¸çš„å·¥ä½œã€‚
 
 the normal looking just like that
 
-![success look](/img/success.png "cool £¿")
+![success look](/img/success.png "cool ï¼Ÿ")
 
-![allSelected](/img/allSelect.jpg "cool £¿")
+![allSelected](/img/allSelect.jpg "cool ï¼Ÿ")
 
 **Attentions:**
-beacuse of the angular'asynchronous you can't open it by dblclick £¬only when your brower is Mozilla
+beacuse of the angular'asynchronous you can't open it by dblclick ï¼Œonly when your brower is Mozilla
 
 if you have any problem appling it for your project,contact me,it's my pleasure to give you my hands.
 
-ÓĞÈÎºÎÎÊÌâ£¬ÇëÌá³ö£¬Ô¸Òâ°ïÄú½â¾ö¡£
+æœ‰ä»»ä½•é—®é¢˜ï¼Œè¯·æå‡ºï¼Œæ„¿æ„å¸®æ‚¨è§£å†³ã€‚
